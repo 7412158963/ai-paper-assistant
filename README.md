@@ -168,6 +168,7 @@ http://127.0.0.1:8000/docs
 
 ## 截图
 <img width="1592" height="770" alt="image" src="https://github.com/user-attachments/assets/a2aad578-f8ce-44df-bdbc-c3f5b8fc1317" />
+<img width="1599" height="765" alt="image" src="https://github.com/user-attachments/assets/1517656e-9f32-4be2-871a-3f825bf0f254" />
 
 
 
