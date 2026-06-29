@@ -168,13 +168,7 @@ http://127.0.0.1:8000/docs
 
 ## 截图
 
-当前仓库包含 GitHub 发布过程截图：
-
-![Create repository](docs/screenshots/github-new-repository.png)
-
-![README screenshot section](docs/screenshots/readme-screenshot-section.png)
-
-建议后续再补一张主页面截图，保存为：
+建议补一张应用主页面截图，保存为：
 
 ```text
 docs/screenshots/app.png
