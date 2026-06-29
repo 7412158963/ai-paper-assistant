@@ -16,3 +16,4 @@ Thumbs.db
 # paper metadata, QA history, and temporary vector database diagnostics.
 app/storage/*
 !app/storage/.gitkeep
+app/storage_backup/

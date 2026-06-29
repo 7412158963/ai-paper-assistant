@@ -166,9 +166,10 @@ http://127.0.0.1:8000/docs
 
 
 ## 截图
-<img width="1592" height="770" alt="image" src="https://github.com/user-attachments/assets/a2aad578-f8ce-44df-bdbc-c3f5b8fc1317" />
-<img width="1599" height="765" alt="image" src="https://github.com/user-attachments/assets/1517656e-9f32-4be2-871a-3f825bf0f254" />
+
 主界面支持论文上传、索引状态查看、历史论文管理、基于 RAG 的论文问答、来源 chunk 引用和问答历史记录。
+
+<img width="1592" height="770" alt="AI Paper Assistant UI" src="https://github.com/user-attachments/assets/a2aad578-f8ce-44df-bdbc-c3f5b8fc1317" />
 
 ## 当前版本说明
 
