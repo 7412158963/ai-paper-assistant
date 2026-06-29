@@ -167,21 +167,9 @@ http://127.0.0.1:8000/docs
 这些目录默认不会提交到 Git，避免上传论文、密钥相关数据或本地测试数据。
 
 ## 截图
+<img width="1592" height="770" alt="image" src="https://github.com/user-attachments/assets/a2aad578-f8ce-44df-bdbc-c3f5b8fc1317" />
 
-建议补一张应用主页面截图，保存为：
 
-```text
-docs/screenshots/app.png
-```
-
-截图应包含：
-
-- 历史论文列表
-- 已上传 / 已分块 / 已建索引状态
-- 提问区域
-- 回答
-- 引用来源 chunk
-- 问答历史
 
 ## 安全提醒
 
