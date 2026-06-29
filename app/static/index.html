@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Paper Assistant</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="toolbar">
+        <div>
+          <h1>AI Paper Reading Assistant</h1>
+          <p>Upload, index, and ask questions grounded in the paper.</p>
+        </div>
+        <a class="docs-link" href="/docs" target="_blank" rel="noreferrer">API Docs</a>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>1. 上传论文</h2>
+          <form id="upload-form" class="stack">
+            <label class="file-picker">
+              <input id="paper-file" type="file" accept="application/pdf" />
+              <span>选择 PDF</span>
+            </label>
+            <button type="submit">上传并提取文本</button>
+          </form>
+          <dl class="metadata">
+            <div>
+              <dt>Paper ID</dt>
+              <dd id="paper-id">尚未上传</dd>
+            </div>
+            <div>
+              <dt>页数</dt>
+              <dd id="page-count">-</dd>
+            </div>
+            <div>
+              <dt>字符数</dt>
+              <dd id="char-count">-</dd>
+            </div>
+          </dl>
+          <div class="status-steps" aria-label="论文处理状态">
+            <span id="status-uploaded" class="status-step">未上传</span>
+            <span id="status-chunked" class="status-step">未分块</span>
+            <span id="status-indexed" class="status-step">未建索引</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>2. 建立索引</h2>
+          <div class="stack">
+            <button id="index-button" type="button">生成 chunks 并建立索引</button>
+            <button id="status-button" type="button" class="secondary">查看向量库状态</button>
+          </div>
+          <pre id="index-output" class="output">等待建立索引</pre>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>历史论文</h2>
+            <button id="refresh-papers-button" type="button" class="secondary small">刷新</button>
+          </div>
+          <div id="paper-list" class="paper-list">
+            <p class="empty-state">正在加载历史论文...</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel ask-panel">
+        <h2>3. 提问</h2>
+        <form id="ask-form" class="ask-form">
+          <textarea
+            id="question"
+            rows="4"
+            maxlength="500"
+            placeholder="例如：What is the main contribution of this paper?"
+          ></textarea>
+          <div class="cost-guard">
+            <span id="question-counter">0 / 500</span>
+            <span>默认只检索 2 个 chunk，最多 3 个，减少模型消耗。</span>
+          </div>
+          <div class="ask-actions">
+            <label>
+              top_k
+              <input id="top-k" type="number" min="1" max="3" value="2" />
+            </label>
+            <button type="submit">提问</button>
+          </div>
+        </form>
+
+        <section class="answer">
+          <h3>回答</h3>
+          <div id="answer-box" class="answer-box">等待提问</div>
+          <div id="answer-citations" class="answer-citations" hidden></div>
+        </section>
+
+        <section class="qa-history">
+          <div class="section-heading">
+            <h3>问答历史</h3>
+            <button id="refresh-qa-history-button" type="button" class="secondary small">刷新</button>
+          </div>
+          <div id="qa-history-list" class="qa-history-list">
+            <p class="empty-state">选择论文后显示历史问答</p>
+          </div>
+        </section>
+
+        <section class="sources">
+          <h3>引用来源片段</h3>
+          <div id="sources-list" class="sources-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" hidden></div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
